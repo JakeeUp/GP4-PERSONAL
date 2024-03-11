@@ -37,6 +37,20 @@ void EmptyLinkFunctionForGeneratedCodeTFpsCharacter() {}
 		P_THIS->Move(Z_Param_Out_InputValue);
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(ATFpsCharacter::execLastWeapon)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->LastWeapon();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(ATFpsCharacter::execNextWeapon)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->NextWeapon();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(ATFpsCharacter::execOnRep_CurrentWeapon)
 	{
 		P_GET_OBJECT(AWeapon,Z_Param_OldWeapon);
@@ -45,15 +59,93 @@ void EmptyLinkFunctionForGeneratedCodeTFpsCharacter() {}
 		P_THIS->OnRep_CurrentWeapon(Z_Param_OldWeapon);
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(ATFpsCharacter::execEquipWeapon)
+	{
+		P_GET_PROPERTY(FIntProperty,Z_Param_Index);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->EquipWeapon(Z_Param_Index);
+		P_NATIVE_END;
+	}
 	void ATFpsCharacter::StaticRegisterNativesATFpsCharacter()
 	{
 		UClass* Class = ATFpsCharacter::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "EquipWeapon", &ATFpsCharacter::execEquipWeapon },
+			{ "LastWeapon", &ATFpsCharacter::execLastWeapon },
 			{ "Look", &ATFpsCharacter::execLook },
 			{ "Move", &ATFpsCharacter::execMove },
+			{ "NextWeapon", &ATFpsCharacter::execNextWeapon },
 			{ "OnRep_CurrentWeapon", &ATFpsCharacter::execOnRep_CurrentWeapon },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_ATFpsCharacter_EquipWeapon_Statics
+	{
+		struct TFpsCharacter_eventEquipWeapon_Parms
+		{
+			int32 Index;
+		};
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Index_MetaData[];
+#endif
+		static const UECodeGen_Private::FIntPropertyParams NewProp_Index;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATFpsCharacter_EquipWeapon_Statics::NewProp_Index_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ATFpsCharacter_EquipWeapon_Statics::NewProp_Index = { "Index", nullptr, (EPropertyFlags)0x0010000000000082, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(TFpsCharacter_eventEquipWeapon_Parms, Index), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ATFpsCharacter_EquipWeapon_Statics::NewProp_Index_MetaData), Z_Construct_UFunction_ATFpsCharacter_EquipWeapon_Statics::NewProp_Index_MetaData) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ATFpsCharacter_EquipWeapon_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ATFpsCharacter_EquipWeapon_Statics::NewProp_Index,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATFpsCharacter_EquipWeapon_Statics::Function_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
+		{ "Category", "Character" },
+		{ "IsBlueprintBase", "true" },
+		{ "ModuleRelativePath", "TFpsCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATFpsCharacter_EquipWeapon_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATFpsCharacter, nullptr, "EquipWeapon", nullptr, nullptr, Z_Construct_UFunction_ATFpsCharacter_EquipWeapon_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ATFpsCharacter_EquipWeapon_Statics::PropPointers), sizeof(Z_Construct_UFunction_ATFpsCharacter_EquipWeapon_Statics::TFpsCharacter_eventEquipWeapon_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020400, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ATFpsCharacter_EquipWeapon_Statics::Function_MetaDataParams), Z_Construct_UFunction_ATFpsCharacter_EquipWeapon_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ATFpsCharacter_EquipWeapon_Statics::PropPointers) < 2048);
+	static_assert(sizeof(Z_Construct_UFunction_ATFpsCharacter_EquipWeapon_Statics::TFpsCharacter_eventEquipWeapon_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_ATFpsCharacter_EquipWeapon()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ATFpsCharacter_EquipWeapon_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ATFpsCharacter_LastWeapon_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATFpsCharacter_LastWeapon_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "TFpsCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATFpsCharacter_LastWeapon_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATFpsCharacter, nullptr, "LastWeapon", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ATFpsCharacter_LastWeapon_Statics::Function_MetaDataParams), Z_Construct_UFunction_ATFpsCharacter_LastWeapon_Statics::Function_MetaDataParams) };
+	UFunction* Z_Construct_UFunction_ATFpsCharacter_LastWeapon()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ATFpsCharacter_LastWeapon_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_ATFpsCharacter_Look_Statics
 	{
@@ -124,13 +216,7 @@ void EmptyLinkFunctionForGeneratedCodeTFpsCharacter() {}
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATFpsCharacter_Move_Statics::Function_MetaDataParams[] = {
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// UPROPERTY(EditDefaultsOnly, Category = \"Input\")\n// UInputAction* baiscAttackAction;\n" },
-#endif
 		{ "ModuleRelativePath", "TFpsCharacter.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "UPROPERTY(EditDefaultsOnly, Category = \"Input\")\nUInputAction* baiscAttackAction;" },
-#endif
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATFpsCharacter_Move_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATFpsCharacter, nullptr, "Move", nullptr, nullptr, Z_Construct_UFunction_ATFpsCharacter_Move_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ATFpsCharacter_Move_Statics::PropPointers), sizeof(Z_Construct_UFunction_ATFpsCharacter_Move_Statics::TFpsCharacter_eventMove_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00440401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ATFpsCharacter_Move_Statics::Function_MetaDataParams), Z_Construct_UFunction_ATFpsCharacter_Move_Statics::Function_MetaDataParams) };
@@ -142,6 +228,34 @@ void EmptyLinkFunctionForGeneratedCodeTFpsCharacter() {}
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ATFpsCharacter_Move_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ATFpsCharacter_NextWeapon_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATFpsCharacter_NextWeapon_Statics::Function_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// UPROPERTY(EditDefaultsOnly, Category = \"Input\")\n// UInputAction* baiscAttackAction;\n" },
+#endif
+		{ "ModuleRelativePath", "TFpsCharacter.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "UPROPERTY(EditDefaultsOnly, Category = \"Input\")\nUInputAction* baiscAttackAction;" },
+#endif
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATFpsCharacter_NextWeapon_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATFpsCharacter, nullptr, "NextWeapon", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ATFpsCharacter_NextWeapon_Statics::Function_MetaDataParams), Z_Construct_UFunction_ATFpsCharacter_NextWeapon_Statics::Function_MetaDataParams) };
+	UFunction* Z_Construct_UFunction_ATFpsCharacter_NextWeapon()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ATFpsCharacter_NextWeapon_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -237,6 +351,14 @@ void EmptyLinkFunctionForGeneratedCodeTFpsCharacter() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_jumpInputAction_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_jumpInputAction;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_nextWeaponInputAction_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_nextWeaponInputAction;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_lastWeaponInputAction_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_lastWeaponInputAction;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -247,8 +369,11 @@ void EmptyLinkFunctionForGeneratedCodeTFpsCharacter() {}
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ATFpsCharacter_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_ATFpsCharacter_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_ATFpsCharacter_EquipWeapon, "EquipWeapon" }, // 164907849
+		{ &Z_Construct_UFunction_ATFpsCharacter_LastWeapon, "LastWeapon" }, // 3190057533
 		{ &Z_Construct_UFunction_ATFpsCharacter_Look, "Look" }, // 580142039
-		{ &Z_Construct_UFunction_ATFpsCharacter_Move, "Move" }, // 2420040832
+		{ &Z_Construct_UFunction_ATFpsCharacter_Move, "Move" }, // 2153169064
+		{ &Z_Construct_UFunction_ATFpsCharacter_NextWeapon, "NextWeapon" }, // 1989228386
 		{ &Z_Construct_UFunction_ATFpsCharacter_OnRep_CurrentWeapon, "OnRep_CurrentWeapon" }, // 3313280399
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ATFpsCharacter_Statics::FuncInfo) < 2048);
@@ -334,6 +459,20 @@ void EmptyLinkFunctionForGeneratedCodeTFpsCharacter() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATFpsCharacter_Statics::NewProp_jumpInputAction = { "jumpInputAction", nullptr, (EPropertyFlags)0x0040000000010001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATFpsCharacter, jumpInputAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATFpsCharacter_Statics::NewProp_jumpInputAction_MetaData), Z_Construct_UClass_ATFpsCharacter_Statics::NewProp_jumpInputAction_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATFpsCharacter_Statics::NewProp_nextWeaponInputAction_MetaData[] = {
+		{ "Category", "Input" },
+		{ "ModuleRelativePath", "TFpsCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATFpsCharacter_Statics::NewProp_nextWeaponInputAction = { "nextWeaponInputAction", nullptr, (EPropertyFlags)0x0040000000010001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATFpsCharacter, nextWeaponInputAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATFpsCharacter_Statics::NewProp_nextWeaponInputAction_MetaData), Z_Construct_UClass_ATFpsCharacter_Statics::NewProp_nextWeaponInputAction_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATFpsCharacter_Statics::NewProp_lastWeaponInputAction_MetaData[] = {
+		{ "Category", "Input" },
+		{ "ModuleRelativePath", "TFpsCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATFpsCharacter_Statics::NewProp_lastWeaponInputAction = { "lastWeaponInputAction", nullptr, (EPropertyFlags)0x0040000000010001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATFpsCharacter, lastWeaponInputAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATFpsCharacter_Statics::NewProp_lastWeaponInputAction_MetaData), Z_Construct_UClass_ATFpsCharacter_Statics::NewProp_lastWeaponInputAction_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ATFpsCharacter_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATFpsCharacter_Statics::NewProp_Camera,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATFpsCharacter_Statics::NewProp_DefaultWeapons_Inner,
@@ -346,6 +485,8 @@ void EmptyLinkFunctionForGeneratedCodeTFpsCharacter() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATFpsCharacter_Statics::NewProp_moveInputAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATFpsCharacter_Statics::NewProp_lookInputAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATFpsCharacter_Statics::NewProp_jumpInputAction,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATFpsCharacter_Statics::NewProp_nextWeaponInputAction,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATFpsCharacter_Statics::NewProp_lastWeaponInputAction,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ATFpsCharacter_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ATFpsCharacter>::IsAbstract,
@@ -397,9 +538,9 @@ void EmptyLinkFunctionForGeneratedCodeTFpsCharacter() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Git_UE_PersonalProject_1_GP4_PERSONAL_JAF_Fps_Source_JAF_Fps_TFpsCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATFpsCharacter, ATFpsCharacter::StaticClass, TEXT("ATFpsCharacter"), &Z_Registration_Info_UClass_ATFpsCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATFpsCharacter), 3559855395U) },
+		{ Z_Construct_UClass_ATFpsCharacter, ATFpsCharacter::StaticClass, TEXT("ATFpsCharacter"), &Z_Registration_Info_UClass_ATFpsCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATFpsCharacter), 1824537099U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Git_UE_PersonalProject_1_GP4_PERSONAL_JAF_Fps_Source_JAF_Fps_TFpsCharacter_h_2060153717(TEXT("/Script/JAF_Fps"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Git_UE_PersonalProject_1_GP4_PERSONAL_JAF_Fps_Source_JAF_Fps_TFpsCharacter_h_2891346307(TEXT("/Script/JAF_Fps"),
 		Z_CompiledInDeferFile_FID_Git_UE_PersonalProject_1_GP4_PERSONAL_JAF_Fps_Source_JAF_Fps_TFpsCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Git_UE_PersonalProject_1_GP4_PERSONAL_JAF_Fps_Source_JAF_Fps_TFpsCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

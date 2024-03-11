@@ -59,6 +59,7 @@ void ATFpsCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLi
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
 	DOREPLIFETIME_CONDITION(ATFpsCharacter, Weapons, COND_None);
+	DOREPLIFETIME_CONDITION(ATFpsCharacter, CurrentWeapon, COND_None);
 }
 
 
@@ -73,8 +74,26 @@ void ATFpsCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 		enhancedInputComp->BindAction(moveInputAction, ETriggerEvent::Triggered, this, &ATFpsCharacter::Move);
 		enhancedInputComp->BindAction(lookInputAction, ETriggerEvent::Triggered, this, &ATFpsCharacter::Look);
 		enhancedInputComp->BindAction(jumpInputAction, ETriggerEvent::Triggered, this, &ATFpsCharacter::Jump);
+		enhancedInputComp->BindAction(nextWeaponInputAction, ETriggerEvent::Triggered, this, &ATFpsCharacter::NextWeapon);
+		enhancedInputComp->BindAction(lastWeaponInputAction, ETriggerEvent::Triggered, this, &ATFpsCharacter::LastWeapon);
 	}
 
+}
+
+void ATFpsCharacter::EquipWeapon(const int32 Index)
+{
+	if(!Weapons.IsValidIndex(Index)|| CurrentWeapon == Weapons [Index]) return;
+
+	if(IsLocallyControlled())
+	{
+		CurrentIndex = Index;
+		
+		const AWeapon* OldWeapon = CurrentWeapon;
+		CurrentWeapon = Weapons[Index];
+		OnRep_CurrentWeapon(OldWeapon);
+		
+	}
+	
 }
 
 void ATFpsCharacter::OnRep_CurrentWeapon(const AWeapon* OldWeapon)
@@ -83,14 +102,31 @@ void ATFpsCharacter::OnRep_CurrentWeapon(const AWeapon* OldWeapon)
 	{
 		if(!CurrentWeapon->CurrentOwner)
 		{
+			const FTransform& PlacementTransform = CurrentWeapon->PlacementTransform * GetMesh()->GetSocketTransform(FName("Weapon_R"));
+
 			CurrentWeapon->SetActorTransform(GetMesh()->GetSocketTransform(FName("Weapon_R")),false,nullptr,ETeleportType::TeleportPhysics);
 			CurrentWeapon->AttachToComponent(GetMesh(),FAttachmentTransformRules::KeepWorldTransform,FName("Weapon_R"));
+
+			CurrentWeapon->CurrentOwner = this;
 		}
+			CurrentWeapon->Mesh->SetVisibility(true);
 	}
 	if(OldWeapon)
 	{
-		
+		OldWeapon->Mesh->SetVisibility(false);
 	}
+}
+
+void ATFpsCharacter::NextWeapon()
+{
+	const int32 Index = Weapons.IsValidIndex(CurrentIndex + 1) ? CurrentIndex + 1 : 0;
+	EquipWeapon(Index);
+}
+
+void ATFpsCharacter::LastWeapon()
+{
+	const int32 Index = Weapons.IsValidIndex(CurrentIndex - 1) ? CurrentIndex - 1 : Weapons.Num()-1;
+	EquipWeapon(Index);
 }
 
 void ATFpsCharacter::Move(const FInputActionValue& InputValue)

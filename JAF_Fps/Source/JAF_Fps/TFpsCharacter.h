@@ -51,6 +51,9 @@ public:
 	UPROPERTY(VisibleInstanceOnly, BlueprintReadWrite, Category = "State")
 	int32 CurrentIndex = 0;
 
+	UFUNCTION(Blueprintable,Category = "Character")
+	virtual void EquipWeapon(const int32 Index);
+
 protected:
 	UFUNCTION()
 	virtual void OnRep_CurrentWeapon(const class AWeapon* OldWeapon);
@@ -71,10 +74,21 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "Input")
 	UInputAction* jumpInputAction;
 
+	UPROPERTY(EditDefaultsOnly, Category = "Input")
+	UInputAction* nextWeaponInputAction;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Input")
+	UInputAction* lastWeaponInputAction;
+
 	// UPROPERTY(EditDefaultsOnly, Category = "Input")
 	// UInputAction* baiscAttackAction;
 
+	UFUNCTION()
+	virtual void NextWeapon();
 
+	UFUNCTION()
+	virtual void LastWeapon();
+	
 	UFUNCTION()
 	void Move(const FInputActionValue& InputValue);
 

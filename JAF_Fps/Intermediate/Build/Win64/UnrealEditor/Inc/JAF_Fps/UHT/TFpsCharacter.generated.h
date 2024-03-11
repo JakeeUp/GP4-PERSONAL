@@ -23,7 +23,10 @@ struct FInputActionValue;
  \
 	DECLARE_FUNCTION(execLook); \
 	DECLARE_FUNCTION(execMove); \
-	DECLARE_FUNCTION(execOnRep_CurrentWeapon);
+	DECLARE_FUNCTION(execLastWeapon); \
+	DECLARE_FUNCTION(execNextWeapon); \
+	DECLARE_FUNCTION(execOnRep_CurrentWeapon); \
+	DECLARE_FUNCTION(execEquipWeapon);
 
 
 #define FID_Git_UE_PersonalProject_1_GP4_PERSONAL_JAF_Fps_Source_JAF_Fps_TFpsCharacter_h_19_ACCESSORS

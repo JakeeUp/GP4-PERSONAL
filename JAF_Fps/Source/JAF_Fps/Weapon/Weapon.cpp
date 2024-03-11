@@ -19,5 +19,8 @@ AWeapon::AWeapon()
 void AWeapon::BeginPlay()
 {
 	Super::BeginPlay();
+
+	if(!CurrentOwner)
+		Mesh->SetVisibility(false);
 }
 
