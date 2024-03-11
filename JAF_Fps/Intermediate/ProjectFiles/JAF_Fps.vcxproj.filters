@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\JAF_Fps.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\JAF_Fps.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\JAF_FpsEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\JAF_Fps">
+      <UniqueIdentifier>{913B8157-F625-338C-A8B2-BDDA2508FD14}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\JAF_Fps\JAF_Fps.Build.cs">
+      <Filter>Source\JAF_Fps</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\JAF_Fps\JAF_Fps.cpp">
+      <Filter>Source\JAF_Fps</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\JAF_Fps\JAF_Fps.h">
+      <Filter>Source\JAF_Fps</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\JAF_Fps\TFpsCharacter.cpp">
+      <Filter>Source\JAF_Fps</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\JAF_Fps\TFpsCharacter.h">
+      <Filter>Source\JAF_Fps</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

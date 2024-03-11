@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "JAF_Fps",
+			"Path": "..\\Source\\JAF_Fps.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "JAF_FpsEditor",
+			"Path": "..\\Source\\JAF_FpsEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"F:\\Git\\UE\\PersonalProject_1\\GP4-PERSONAL\\JAF_Fps\\Source\\JAF_Fps\\JAF_Fps.Build.cs",
+		"F:\\Git\\UE\\PersonalProject_1\\GP4-PERSONAL\\JAF_Fps\\Source\\JAF_Fps.Target.cs",
+		"F:\\Git\\UE\\PersonalProject_1\\GP4-PERSONAL\\JAF_Fps\\Source\\JAF_FpsEditor.Target.cs"
+	],
+	"EngineVersion": "5.3.2"
+}
