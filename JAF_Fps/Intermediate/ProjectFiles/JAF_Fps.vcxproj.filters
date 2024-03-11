@@ -30,6 +30,12 @@
     <Filter Include="Source\JAF_Fps">
       <UniqueIdentifier>{913B8157-F625-338C-A8B2-BDDA2508FD14}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\JAF_Fps\FPSPlayerController.cpp">
+      <Filter>Source\JAF_Fps</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\JAF_Fps\FPSPlayerController.h">
+      <Filter>Source\JAF_Fps</Filter>
+    </ClInclude>
     <None Include="..\..\Source\JAF_Fps\JAF_Fps.Build.cs">
       <Filter>Source\JAF_Fps</Filter>
     </None>
