@@ -9,6 +9,7 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AWeapon;
 struct FInputActionValue;
 #ifdef JAF_FPS_TFpsCharacter_generated_h
 #error "TFpsCharacter.generated.h already included, missing '#pragma once' in TFpsCharacter.h"
@@ -21,7 +22,8 @@ struct FInputActionValue;
 #define FID_Git_UE_PersonalProject_1_GP4_PERSONAL_JAF_Fps_Source_JAF_Fps_TFpsCharacter_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execLook); \
-	DECLARE_FUNCTION(execMove);
+	DECLARE_FUNCTION(execMove); \
+	DECLARE_FUNCTION(execOnRep_CurrentWeapon);
 
 
 #define FID_Git_UE_PersonalProject_1_GP4_PERSONAL_JAF_Fps_Source_JAF_Fps_TFpsCharacter_h_19_ACCESSORS
@@ -31,7 +33,14 @@ private: \
 	friend struct Z_Construct_UClass_ATFpsCharacter_Statics; \
 public: \
 	DECLARE_CLASS(ATFpsCharacter, ACharacter, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/JAF_Fps"), NO_API) \
-	DECLARE_SERIALIZER(ATFpsCharacter)
+	DECLARE_SERIALIZER(ATFpsCharacter) \
+	enum class ENetFields_Private : uint16 \
+	{ \
+		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
+		Weapons=NETFIELD_REP_START, \
+		CurrentWeapon, \
+		NETFIELD_REP_END=CurrentWeapon	}; \
+	NO_API virtual void ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const override;
 
 
 #define FID_Git_UE_PersonalProject_1_GP4_PERSONAL_JAF_Fps_Source_JAF_Fps_TFpsCharacter_h_19_ENHANCED_CONSTRUCTORS \

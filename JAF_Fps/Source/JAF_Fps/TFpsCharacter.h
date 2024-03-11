@@ -25,6 +25,7 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
 public:	
 	// Called every frame
@@ -36,6 +37,24 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
 	class UCameraComponent* Camera;
 
+protected:
+	//Weapons Classes Spawned By Default
+	UPROPERTY(EditDefaultsOnly,Category = "Configurations")
+	TArray<TSubclassOf<class AWeapon>> DefaultWeapons;
+public:
+	UPROPERTY(VisibleInstanceOnly,BlueprintReadWrite,Replicated,Category = "State")
+	TArray<class AWeapon*> Weapons;
+
+	UPROPERTY(VisibleInstanceOnly, BlueprintReadWrite,ReplicatedUsing = OnRep_CurrentWeapon, Category ="State")
+	class AWeapon* CurrentWeapon;
+	
+	UPROPERTY(VisibleInstanceOnly, BlueprintReadWrite, Category = "State")
+	int32 CurrentIndex = 0;
+
+protected:
+	UFUNCTION()
+	virtual void OnRep_CurrentWeapon(const class AWeapon* OldWeapon);
+	
 private:
 	/*****************************************************/
 	/*                       Input                       */

@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "f:\\git\\ue\\personalproject_1\\gp4-personal\\jaf_fps\\intermediate\\build\\win64\\unrealeditor\\inc\\jaf_fps\\uht\\fpsplayercontroller.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "f:\\git\\ue\\personalproject_1\\gp4-personal\\jaf_fps\\intermediate\\build\\win64\\x64\\jaf_fpseditor\\development\\unrealed\\sharedpch.unrealed.cpp20.h.pch",
+        "Includes": [
+            "f:\\git\\ue\\personalproject_1\\gp4-personal\\jaf_fps\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\jaf_fps\\definitions.jaf_fps.h",
+            "f:\\git\\ue\\personalproject_1\\gp4-personal\\jaf_fps\\source\\jaf_fps\\player\\fpsplayercontroller.h",
+            "f:\\git\\ue\\personalproject_1\\gp4-personal\\jaf_fps\\intermediate\\build\\win64\\unrealeditor\\inc\\jaf_fps\\uht\\fpsplayercontroller.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

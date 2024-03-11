@@ -12,6 +12,8 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
+#include "Net/UnrealNetwork.h"
+#include "Weapon/Weapon.h"
 
 // Sets default values
 ATFpsCharacter::ATFpsCharacter()
@@ -25,19 +27,39 @@ ATFpsCharacter::ATFpsCharacter()
 	Camera->SetupAttachment(GetMesh(), FName("Head"));
 
 	
-	GetCharacterMovement()->bOrientRotationToMovement = true;
 	GetCharacterMovement()->RotationRate = FRotator(1080.f);
 	GetCharacterMovement()->JumpZVelocity = 600.f;
 
 }
 
-// // Called when the game starts or when spawned
-// void ATFpsCharacter::BeginPlay()
-// {
-// 	Super::BeginPlay();
-// 	
-// }
-//
+// Called when the game starts or when spawned
+void ATFpsCharacter::BeginPlay()
+{
+	Super::BeginPlay();
+
+	for(const TSubclassOf<AWeapon>& WeaponClass : DefaultWeapons)
+	{
+		if(!WeaponClass) continue;
+		FActorSpawnParameters Params;
+		Params.Owner = this;
+		AWeapon* SpawnedWeapon = GetWorld()->SpawnActor<AWeapon>(WeaponClass, Params);
+		const int32 Index = Weapons.Add(SpawnedWeapon);
+
+		if(Index == CurrentIndex)
+		{
+			CurrentWeapon = SpawnedWeapon;
+			OnRep_CurrentWeapon(nullptr);
+		}
+	}
+	
+}
+
+void ATFpsCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	DOREPLIFETIME_CONDITION(ATFpsCharacter, Weapons, COND_None);
+}
 
 
 // Called to bind functionality to input
@@ -53,6 +75,22 @@ void ATFpsCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 		enhancedInputComp->BindAction(jumpInputAction, ETriggerEvent::Triggered, this, &ATFpsCharacter::Jump);
 	}
 
+}
+
+void ATFpsCharacter::OnRep_CurrentWeapon(const AWeapon* OldWeapon)
+{
+	if(CurrentWeapon)
+	{
+		if(!CurrentWeapon->CurrentOwner)
+		{
+			CurrentWeapon->SetActorTransform(GetMesh()->GetSocketTransform(FName("Weapon_R")),false,nullptr,ETeleportType::TeleportPhysics);
+			CurrentWeapon->AttachToComponent(GetMesh(),FAttachmentTransformRules::KeepWorldTransform,FName("Weapon_R"));
+		}
+	}
+	if(OldWeapon)
+	{
+		
+	}
 }
 
 void ATFpsCharacter::Move(const FInputActionValue& InputValue)

@@ -35,9 +35,11 @@
 /NODEFAULTLIB:"LIBCPD"
 /FUNCTIONPADMIN:6
 "F:\Git\UE\PersonalProject_1\GP4-PERSONAL\JAF_Fps\Intermediate\Build\Win64\x64\JAF_FpsEditor\Development\UnrealEd\SharedPCH.UnrealEd.Cpp20.h.obj"
+"F:\Git\UE\PersonalProject_1\GP4-PERSONAL\JAF_Fps\Intermediate\Build\Win64\x64\UnrealEditor\Development\JAF_Fps\FPSPlayerController.gen.cpp.obj"
 "F:\Git\UE\PersonalProject_1\GP4-PERSONAL\JAF_Fps\Intermediate\Build\Win64\x64\UnrealEditor\Development\JAF_Fps\JAF_Fps.init.gen.cpp.obj"
 "F:\Git\UE\PersonalProject_1\GP4-PERSONAL\JAF_Fps\Intermediate\Build\Win64\x64\UnrealEditor\Development\JAF_Fps\TFpsCharacter.gen.cpp.obj"
 "F:\Git\UE\PersonalProject_1\GP4-PERSONAL\JAF_Fps\Intermediate\Build\Win64\x64\UnrealEditor\Development\JAF_Fps\JAF_Fps.cpp.obj"
+"F:\Git\UE\PersonalProject_1\GP4-PERSONAL\JAF_Fps\Intermediate\Build\Win64\x64\UnrealEditor\Development\JAF_Fps\FPSPlayerController.cpp.obj"
 "F:\Git\UE\PersonalProject_1\GP4-PERSONAL\JAF_Fps\Intermediate\Build\Win64\x64\UnrealEditor\Development\JAF_Fps\TFpsCharacter.cpp.obj"
 "F:\Git\UE\PersonalProject_1\GP4-PERSONAL\JAF_Fps\Intermediate\Build\Win64\x64\UnrealEditor\Development\JAF_Fps\Default.rc2.res"
 "..\Plugins\EnhancedInput\Intermediate\Build\Win64\x64\UnrealEditor\Development\EnhancedInput\UnrealEditor-EnhancedInput.lib"

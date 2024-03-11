@@ -30,12 +30,6 @@
     <Filter Include="Source\JAF_Fps">
       <UniqueIdentifier>{913B8157-F625-338C-A8B2-BDDA2508FD14}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\JAF_Fps\FPSPlayerController.cpp">
-      <Filter>Source\JAF_Fps</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\JAF_Fps\FPSPlayerController.h">
-      <Filter>Source\JAF_Fps</Filter>
-    </ClInclude>
     <None Include="..\..\Source\JAF_Fps\JAF_Fps.Build.cs">
       <Filter>Source\JAF_Fps</Filter>
     </None>
@@ -50,6 +44,24 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\JAF_Fps\TFpsCharacter.h">
       <Filter>Source\JAF_Fps</Filter>
+    </ClInclude>
+    <Filter Include="Source\JAF_Fps\Player">
+      <UniqueIdentifier>{5CD4861B-88D5-3E40-BCFE-FBBF41905D41}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\JAF_Fps\Player\FPSPlayerController.cpp">
+      <Filter>Source\JAF_Fps\Player</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\JAF_Fps\Player\FPSPlayerController.h">
+      <Filter>Source\JAF_Fps\Player</Filter>
+    </ClInclude>
+    <Filter Include="Source\JAF_Fps\Weapon">
+      <UniqueIdentifier>{5399E222-E8A5-3011-9251-D0D497AB1239}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\JAF_Fps\Weapon\Weapon.cpp">
+      <Filter>Source\JAF_Fps\Weapon</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\JAF_Fps\Weapon\Weapon.h">
+      <Filter>Source\JAF_Fps\Weapon</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

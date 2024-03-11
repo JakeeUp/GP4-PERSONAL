@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "JAF_Fps/FPSPlayerController.h"
+#include "JAF_Fps/Player/FPSPlayerController.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeFPSPlayerController() {}
 // Cross Module References
@@ -42,8 +42,8 @@ void EmptyLinkFunctionForGeneratedCodeFPSPlayerController() {}
 		{ "Comment", "/**\n * \n */" },
 #endif
 		{ "HideCategories", "Collision Rendering Transformation" },
-		{ "IncludePath", "FPSPlayerController.h" },
-		{ "ModuleRelativePath", "FPSPlayerController.h" },
+		{ "IncludePath", "Player/FPSPlayerController.h" },
+		{ "ModuleRelativePath", "Player/FPSPlayerController.h" },
 	};
 #endif
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AFPSPlayerController_Statics::StaticCppClassTypeInfo = {
@@ -79,15 +79,15 @@ void EmptyLinkFunctionForGeneratedCodeFPSPlayerController() {}
 	AFPSPlayerController::AFPSPlayerController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AFPSPlayerController);
 	AFPSPlayerController::~AFPSPlayerController() {}
-	struct Z_CompiledInDeferFile_FID_Git_UE_PersonalProject_1_GP4_PERSONAL_JAF_Fps_Source_JAF_Fps_FPSPlayerController_h_Statics
+	struct Z_CompiledInDeferFile_FID_Git_UE_PersonalProject_1_GP4_PERSONAL_JAF_Fps_Source_JAF_Fps_Player_FPSPlayerController_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Git_UE_PersonalProject_1_GP4_PERSONAL_JAF_Fps_Source_JAF_Fps_FPSPlayerController_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AFPSPlayerController, AFPSPlayerController::StaticClass, TEXT("AFPSPlayerController"), &Z_Registration_Info_UClass_AFPSPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFPSPlayerController), 2313017887U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Git_UE_PersonalProject_1_GP4_PERSONAL_JAF_Fps_Source_JAF_Fps_Player_FPSPlayerController_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_AFPSPlayerController, AFPSPlayerController::StaticClass, TEXT("AFPSPlayerController"), &Z_Registration_Info_UClass_AFPSPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFPSPlayerController), 196014925U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Git_UE_PersonalProject_1_GP4_PERSONAL_JAF_Fps_Source_JAF_Fps_FPSPlayerController_h_1424824057(TEXT("/Script/JAF_Fps"),
-		Z_CompiledInDeferFile_FID_Git_UE_PersonalProject_1_GP4_PERSONAL_JAF_Fps_Source_JAF_Fps_FPSPlayerController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Git_UE_PersonalProject_1_GP4_PERSONAL_JAF_Fps_Source_JAF_Fps_FPSPlayerController_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Git_UE_PersonalProject_1_GP4_PERSONAL_JAF_Fps_Source_JAF_Fps_Player_FPSPlayerController_h_2399970035(TEXT("/Script/JAF_Fps"),
+		Z_CompiledInDeferFile_FID_Git_UE_PersonalProject_1_GP4_PERSONAL_JAF_Fps_Source_JAF_Fps_Player_FPSPlayerController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Git_UE_PersonalProject_1_GP4_PERSONAL_JAF_Fps_Source_JAF_Fps_Player_FPSPlayerController_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

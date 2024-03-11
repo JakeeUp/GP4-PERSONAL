@@ -15,7 +15,9 @@
             "f:\\epicganes\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\gameframework\\rootmotionsource.h",
             "f:\\epicganes\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\rootmotionsource.generated.h",
             "f:\\epicganes\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\character.generated.h",
-            "f:\\git\\ue\\personalproject_1\\gp4-personal\\jaf_fps\\intermediate\\build\\win64\\unrealeditor\\inc\\jaf_fps\\uht\\tfpscharacter.generated.h"
+            "f:\\git\\ue\\personalproject_1\\gp4-personal\\jaf_fps\\intermediate\\build\\win64\\unrealeditor\\inc\\jaf_fps\\uht\\tfpscharacter.generated.h",
+            "f:\\epicganes\\ue_5.3\\engine\\plugins\\enhancedinput\\source\\enhancedinput\\public\\inputactionvalue.h",
+            "f:\\epicganes\\ue_5.3\\engine\\plugins\\enhancedinput\\intermediate\\build\\win64\\unrealeditor\\inc\\enhancedinput\\uht\\inputactionvalue.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

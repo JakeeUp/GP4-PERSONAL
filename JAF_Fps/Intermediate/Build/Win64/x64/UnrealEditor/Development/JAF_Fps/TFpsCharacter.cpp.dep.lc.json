@@ -111,7 +111,11 @@
             "f:\\epicganes\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\charactermovementcomponentasync.generated.h",
             "f:\\epicganes\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\charactermovementcomponent.generated.h",
             "f:\\epicganes\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\gameframework\\springarmcomponent.h",
-            "f:\\epicganes\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\springarmcomponent.generated.h"
+            "f:\\epicganes\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\springarmcomponent.generated.h",
+            "f:\\epicganes\\ue_5.3\\engine\\source\\runtime\\engine\\public\\net\\unrealnetwork.h",
+            "f:\\epicganes\\ue_5.3\\engine\\source\\runtime\\net\\core\\public\\net\\core\\propertyconditions\\propertyconditions.h",
+            "f:\\git\\ue\\personalproject_1\\gp4-personal\\jaf_fps\\source\\jaf_fps\\weapon\\weapon.h",
+            "f:\\git\\ue\\personalproject_1\\gp4-personal\\jaf_fps\\intermediate\\build\\win64\\unrealeditor\\inc\\jaf_fps\\uht\\weapon.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
